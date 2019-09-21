@@ -3,8 +3,44 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import firebase from '@firebase/app';
+import '@firebase/firestore';
+import { FirestoreProvider, FirestoreCollection } from 'react-firestore';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const config = {
+    apiKey: "AIzaSyCP3J2Me6sedZyqdQ_X0VO2eGHNvwAe9Ac",
+    authDomain: "react-test-app-252223.firebaseapp.com",
+    databaseURL: "https://react-test-app-252223.firebaseio.com",
+    projectId: "react-test-app-252223",
+    storageBucket: "react-test-app-252223.appspot.com",
+    messagingSenderId: "721529444512",
+    appId: "1:721529444512:web:9a4729b888f66fe5ded1c5"
+};
+
+firebase.initializeApp(config);
+
+ReactDOM.render(
+    <FirestoreProvider firebase={firebase}>
+        <FirestoreCollection
+            path={'requests'}
+            render={({ data }) => {
+                return (<div>
+                    <h1>Requests</h1>
+                    <ul>
+                        {data.map(request => (
+                            <li key={request.id}>
+                                {request.bloodType.join(', ')}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                );
+            }}
+        />
+    </FirestoreProvider>,
+    document.getElementById('root'),
+);
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
