@@ -8,13 +8,13 @@ import '@firebase/firestore';
 import { FirestoreProvider } from 'react-firestore';
 
 const config = {
-    apiKey: "AIzaSyCP3J2Me6sedZyqdQ_X0VO2eGHNvwAe9Ac",
-    authDomain: "react-test-app-252223.firebaseapp.com",
-    databaseURL: "https://react-test-app-252223.firebaseio.com",
-    projectId: "react-test-app-252223",
-    storageBucket: "react-test-app-252223.appspot.com",
-    messagingSenderId: "721529444512",
-    appId: "1:721529444512:web:9a4729b888f66fe5ded1c5"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
 };
 
 firebase.initializeApp(config);
