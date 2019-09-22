@@ -20,3 +20,163 @@
 .App-link {
   color: #09d3ac;
 }
+
+body {
+  padding-top: 2em;
+}
+
+h3 {
+  margin: 0 0 0.5em 2em;
+}
+
+h6 {
+  margin: 0 0 3em 3.5em;
+}
+
+.new-request {
+  background-color: rgb(255,114,114);
+  position: absolute;
+  right: 2em;
+  border: none;
+  top: 4em;
+}
+
+/* Card */
+
+.card {
+  background-color: rgba(233,236,239, .4);
+  box-shadow: 0 4px 6px -6px rgba(0,0,0,.1);
+  border: none;
+  margin: 1em;
+  text-align: center;
+}
+
+.card div {
+  font-weight: 500;
+}
+
+.card label {
+  font-size: .5em;
+}
+
+.sideTrashCan {
+  position: absolute;
+  left: 2em;
+  top: 2.5em;
+  font-size: 1em;
+  color: rgb(255,114,114);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.sideMoreInfo {
+  position: absolute;
+  right: 2em;
+  top: 2em;
+  font-size: 1.2em;
+  color: rgb(182, 181, 181);
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Loading Logo */
+
+#loader-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: white;
+  opacity: 1;
+}
+
+#css3-spinner-svg-pulse-wrapper {
+	position: absolute;
+	overflow: hidden;
+	width: 260px;
+	height: 210px;
+	top: 50%;
+	left: 50%;
+	margin-top: -105px;
+	margin-left: -130px;
+	background-color: transparent;
+	animation: none;
+  -webkit-animation: none;
+}
+
+#css3-spinner-svg-pulse {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	margin-top: -105px;
+  margin-left: -275px;
+}
+
+#css3-spinner-pulse {
+	stroke-dasharray: 281;
+  -webkit-animation: dash 5s infinite linear forwards;
+}
+
+/*Animation*/
+@-webkit-keyframes dash {
+	from {
+		stroke-dashoffset:814;
+	}
+
+	to {
+		stroke-dashoffset:-814;
+	}
+}
+
+@keyframes dash {
+	from {
+		stroke-dashoffset:814;
+	}
+
+	to {
+		stroke-dashoffset:-814;
+	}
+}
+
+/* Model View */
+
+#modal-view {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left:0;
+  background-color: rgba(0,0,0,.5);
+  text-align: center;
+  display: none;
+}
+
+.model-hold {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  width: 40%;
+  margin-top: 8em;
+  padding: 2em;
+  text-align: left;
+}
+
+.model-hold div {
+  margin: 2em 0 2em 0;
+}
+
+.model-hold button {
+  background-color: rgb(255,114,114);
+  border: none;
+}
+
+/* CheckBoxes */
+.checkbox-rows {
+  margin-top: 0 !important;
+}
+
+.checkbox-rows .form-check-inline {
+  margin: .5em;
+}
+

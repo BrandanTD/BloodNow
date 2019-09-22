@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import firebase from '@firebase/app';
 import '@firebase/firestore';
-import { FirestoreProvider, FirestoreCollection } from 'react-firestore';
+import { FirestoreProvider } from 'react-firestore';
 
 const config = {
     apiKey: "AIzaSyCP3J2Me6sedZyqdQ_X0VO2eGHNvwAe9Ac",
@@ -20,25 +20,10 @@ const config = {
 firebase.initializeApp(config);
 
 ReactDOM.render(
-    <FirestoreProvider firebase={firebase}>
-        <FirestoreCollection
-            path={'requests'}
-            render={({ data }) => {
-                return (<div>
-                    <h1>Requests</h1>
-                    <ul>
-                        {data.map(request => (
-                            <li key={request.id}>
-                                {request.bloodType.join(', ')}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                );
-            }}
-        />
+   <FirestoreProvider firebase={firebase}>
+        <App />
     </FirestoreProvider>,
-    document.getElementById('root'),
+    document.getElementById('root')
 );
 
 
